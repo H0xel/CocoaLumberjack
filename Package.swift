@@ -30,32 +30,23 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "CocoaLumberjack",
+            name: "CocoaLumberjackSwift",
             exclude: ["Supporting Files"]),
         .target(
             name: "CocoaLumberjackSwiftSupport",
-            dependencies: ["CocoaLumberjack"]),
+            dependencies: ["CocoaLumberjackSwift"]),
         .target(
-            name: "CocoaLumberjackSwift",
+            name: "CocoaLumberjack",
             dependencies: [
-                "CocoaLumberjack",
+                "CocoaLumberjackSwift",
                 "CocoaLumberjackSwiftSupport"
             ],
             exclude: ["Supporting Files"]),
         .target(
             name: "CocoaLumberjackSwiftLogBackend",
             dependencies: [
-                "CocoaLumberjack",
+                "CocoaLumberjackSwift",
                 .product(name: "Logging", package: "swift-log")
             ]),
-        .testTarget(
-            name: "CocoaLumberjackTests",
-            dependencies: ["CocoaLumberjack"]),
-        .testTarget(
-            name: "CocoaLumberjackSwiftTests",
-            dependencies: ["CocoaLumberjackSwift"]),
-        .testTarget(
-            name: "CocoaLumberjackSwiftLogBackendTests",
-            dependencies: ["CocoaLumberjackSwiftLogBackend"]),
     ]
 )

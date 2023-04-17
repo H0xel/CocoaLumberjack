@@ -13,7 +13,7 @@
 //   to endorse or promote products derived from this software without specific
 //   prior written permission of Deusty, LLC.
 
-@_exported import CocoaLumberjack
+@_exported import CocoaLumberjackSwift
 #if SWIFT_PACKAGE
 import CocoaLumberjackSwiftSupport
 #endif

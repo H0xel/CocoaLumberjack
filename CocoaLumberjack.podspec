@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'A fast & simple, yet powerful & flexible logging framework for macOS, iOS, tvOS and watchOS.'
   s.authors  = { 'Robbie Hanson' => 'robbiehanson@deusty.com' }
   s.homepage = 'https://github.com/CocoaLumberjack/CocoaLumberjack'
-  s.source   = { :git => 'https://github.com/CocoaLumberjack/CocoaLumberjack.git',
+  s.source   = { :git => 'https://github.com/H0xel/CocoaLumberjack.git',
                  :tag => "#{s.version}" }
 
   s.description = 'It is similar in concept to other popular logging frameworks such as log4j, '   \
@@ -26,12 +26,12 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'Core'
 
   s.subspec 'Core' do |ss|
-    ss.source_files         = 'Sources/CocoaLumberjack/**/*.{h,m}'
-    ss.private_header_files = 'Sources/CocoaLumberjack/DD*Internal.{h}'
+    ss.source_files         = 'Sources/CocoaLumberjackSwift/**/*.{h,m}'
+    ss.private_header_files = 'Sources/CocoaLumberjackSwift/DD*Internal.{h}'
   end
 
   s.subspec 'Swift' do |ss|
     ss.dependency 'CocoaLumberjack/Core'
-    ss.source_files = 'Sources/CocoaLumberjackSwift/**/*.swift', 'Sources/CocoaLumberjackSwiftSupport/include/**/*.{h}'
+    ss.source_files = 'Sources/CocoaLumberjack/**/*.swift', 'Sources/CocoaLumberjackSwiftSupport/include/**/*.{h}'
   end
 end
