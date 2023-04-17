@@ -18,7 +18,7 @@
 import Combine
 
 #if SWIFT_PACKAGE
-import CocoaLumberjack
+import CocoaLumberjackSwift
 import CocoaLumberjackSwiftSupport
 #endif
 
